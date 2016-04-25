@@ -1,4 +1,4 @@
-### Koa Generators
+# Koa Generators
 ## Installation
 `npm install`
 ## Usage
