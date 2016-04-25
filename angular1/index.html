@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Photo Fun</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js" type="text/javascript"></script>
+    <script src="myapp.js"></script>
+</head>
+    
+    
+<body ng-app="myApp" ng-controller="myCtrl">
+    
+    <h1 class="title">AngularJS Photo Fun</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <img style="float:left" ng-style="{'opacity': opacity, 'transform': transform, '-webkit-transform': transform, '-ms-transform': transform}" class="thumb" ng-src="{{step}}" />
+                <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" />
+            </div>
+            <!-- for multiple files 
+            <div ng-repeat="step in stepsModel">
+                <img class="thumb" ng-src="{{step}}" />
+            </div>
+            -->
+            <div class="col-md-7">
+                <h3 class="title text-left">Available Functions</h3>
+                <h3 class="title text-right">Applied Functions</h3>
+                
+                <button class="btn" ng-class="{45:'red', 0:'green'}[rotate_val]" ng-click="addRotate()">Rotate</button>
+                
+                <button class="btn" ng-class="{'-40':'red', 0:'green'}[translate_val]" ng-click="addTranslate()">Translate</button>
+                
+                <button class="btn" ng-class="{0.5:'red', 1:'green'}[scale_val]" ng-click="addScale()">Scale</button>
+                                
+                <button class="btn" ng-class="{0.5:'red', 1:'green'}[opacity_val]" ng-click="addOpacity()">Opacity</button>   
+                                
+                <button class="btn yellow" ng-click="Reset()">Reset</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
