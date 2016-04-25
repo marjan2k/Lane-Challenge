@@ -1,0 +1,41 @@
+   <h1 class="title">AngularJS Photo Fun</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+        <img [ngStyle]="{'opacity': opacity,
+                         'transform': transform,
+                         '-webkit-transform': transform,
+                         '-ms-transform': transform}"
+              src='img_thumbnail.jpg' class="image thumb" />
+        <input type="file" (change)="changeListner($event)" />
+        </div>
+        <div class="col-md-7">
+                <h3 class="title text-left">Available Functions</h3>
+                <h3 class="title text-right">Applied Functions</h3>
+                
+                <button class="btn"
+                        [ngClass]="{'red': rotate, 'green': !rotate}"
+                        (click)="addRotate()">
+                        Rotate</button>
+                
+                <button class="btn green"
+                        [ngClass]="{'red': translate < 0, 'green': translate == 0}"
+                        (click)="addTranslate()">
+                        Translate</button>
+                
+                <button class="btn green"
+                        [ngClass]="{'red': scale == 0.5, 'green': scale == 1}"
+                        (click)="addScale()">
+                        Scale</button>
+                                
+                <button class="btn red"
+                        [ngClass]="{'red': opacity == 0.5, 'green': opacity == 1}"
+                        (click)="addOpacity()">
+                        Opacity</button>   
+                                
+                <button class="btn yellow"
+                        (click)="Reset()">
+                        Reset</button>
+        </div>
+    </div>
+</div>
